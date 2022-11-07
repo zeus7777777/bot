@@ -28,7 +28,7 @@ input('please login and click call contract, and then press any key to continue'
 print('waiting...')
 
 xpath = '//*[@id="root"]/div/div[3]/button[2]'
-driver.switch_to.frame(driver.find_element_by_tag_name("iframe"))
+driver.switch_to.frame(driver.find_element(By.TAG_NAME, "iframe"))
 
 wait_until(target_hour, target_minute)
 
@@ -36,7 +36,7 @@ while True:
     try:
         WebDriverWait(driver, 60).until(
             EC.element_to_be_clickable((By.XPATH, xpath)))
-        button = driver.find_element_by_xpath(xpath)
+        button = driver.find_element(By.XPATH, xpath)
         button.click()
         print('sent at', datetime.datetime.utcnow())
         time.sleep(1)
