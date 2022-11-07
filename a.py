@@ -1,5 +1,5 @@
 hh = 3
-mm = 3
+mm = 15
 duration = 6
 
 import time
